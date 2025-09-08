@@ -1,170 +1,51 @@
-# Project Title
+# Translation 
 
 
 
-One Paragraph of project description goes here
-
+Translation API With Spring Security
 
 
 ## Getting Started
 
-
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+First you need to download the project from git and run the db scripts.
 
 
 ### Prerequisites
 
-
-
-What things you need to install the software and how to install them
-
-
-
-```
-
-Give examples
-
-```
-
+You must have postgres and intellij idea and postgres sql.
 
 
 ### Installing
 
-
-
-A step by step series of examples that tell you how to get a development env running
-
-
-
-Say what the step will be
-
-
-
-```
-
-Give the example
-
-```
-
-
-
-And repeat
-
-
-
-```
-
-until finished
-
-```
-
-
-
-End with an example of getting some data out of the system or using it for a little demo
-
+install the intellij idea and you can download the https://www.postgresql.org/download/ from there based on what kinda of OS you have.
 
 
 ## Running the tests
 
-
-
 Explain how to run the automated tests for this system
 
+### And coding style 
+
+I have used the Spring Security for make sure every api is secured by authenticaoin and by JWT token.
+I have used Reponse Entity for better response.
+try to use the cache 
+
+## Deployment
 
 
-### Break down into end to end tests
-
-
-
-Explain what these tests test and why
-
-
-
-```
-
-Give an example
-
-```
-
-
-
-### And coding style tests
-
-
-
-Explain what these tests test and why
-
-
-
-```
-
-Give an example
-
-```
-
-
-
-\## Deployment
-
-
-
-Add additional notes about how to deploy this on a live system
-
+just deploy the war on the tomcat if you want to.
 
 
 ## Built With
 
-
-
-\* \[Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-
-\* \[Maven](https://maven.apache.org/) - Dependency Management
-
-\* \[ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-
-
-
-
-## Versioning
-
-
-
-We use \[SemVer](http://semver.org/) for versioning. For the versions available, see the \[tags on this repository](https://github.com/your/project/tags). 
+here is the git url which is public
+https://github.com/abbasqamar316/TranslationApi.git
 
 
 
 ## Authors
 
 
-
-\*Billie Thompson\*\* - \*Initial work\* - \[PurpleBooth](https://github.com/PurpleBooth)
-
-
-
-See also the list of \[contributors](https://github.com/your/project/contributors) who participated in this project.
-
-
-
-## License
-
-
-
-This project is licensed under the MIT License - see the \[LICENSE.md](LICENSE.md) file for details
-
-
-
-## Acknowledgments
-
-
-
-* Hat tip to anyone whose code was used
-
-* Inspiration
-
-* etc
-
+Abbas Qamar
 
 
