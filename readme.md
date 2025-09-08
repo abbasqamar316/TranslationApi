@@ -9,6 +9,8 @@ Translation API With Spring Security
 
 First you need to download the project from git and run the db scripts.
 
+the script are 
+
 
 ### Prerequisites
 
@@ -48,9 +50,15 @@ try to use the cache
 ## Deployment
 
 
-just deploy the war on the tomcat if you want to.
+just deploy the war on the tomcat if you want to and run the scripts for database and for tables and insert user query for user table
 
+## Add the user  into user table
 
+## here is the query
+
+INSERT INTO public.users(
+id, username, password)
+VALUES (1, 'abbas', '$2a$12$B.tdihqBPoeEXtfn37f5.uYOZLwS2LVDipN9vHTiHGHdaAWKONApy');
 ## Built With
 
 here is the git url which is public
