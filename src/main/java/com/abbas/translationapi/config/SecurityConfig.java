@@ -10,10 +10,12 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.ExceptionTranslationFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -29,19 +31,22 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.csrf(customizer -> customizer.disable()).
                 authorizeHttpRequests(request -> request
-                        .requestMatchers("login","v3/api-docs","swagger-ui/*" )
+                        .requestMatchers("login","v3/api-docs","/swagger-ui.html", "/swagger-ui/**",
+                                "/swagger-resources/**", "/swagger-resources", "/v3/api-docs/**", "/proxy/**" )
                         .permitAll()
                         .anyRequest().authenticated()).
                 //formLogin(Customizer.withDefaults()).
                         httpBasic(Customizer.withDefaults()).
                 sessionManagement(session ->  session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+
                 .build();
 
 
 
 
     }
+
 
     @Bean
     public AuthenticationProvider authenticationProvider(){

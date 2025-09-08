@@ -14,15 +14,30 @@ First you need to download the project from git and run the db scripts.
 
 You must have postgres and intellij idea and postgres sql.
 
-
 ### Installing
 
 install the intellij idea and you can download the https://www.postgresql.org/download/ from there based on what kinda of OS you have.
+And the credentials for particular database is test
+and credentials are stored in users table
+
+the Credentials are 
+
+user name : abbas \
+password : test
+
+for encrypt i used the below website
+
+https://www.browserling.com/tools/bcrypt
+
+with round 13
 
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+here is The Swagger URL 
+http://localhost:9082/swagger-ui/index.html
+
+I am running the project on port 9082 u can change from applicatoin.properties
 
 ### And coding style 
 
