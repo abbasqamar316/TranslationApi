@@ -4,6 +4,7 @@ import com.abbas.translationapi.model.LanguageEntity;
 import com.abbas.translationapi.model.Message;
 import com.abbas.translationapi.repository.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,11 +17,18 @@ public class MessageMapper {
 
     public LanguageEntity addData(Message msg) throws Exception {
 
-        LanguageEntity languageEntity = new LanguageEntity();
-        languageEntity.setContent(msg.getContent());
-        languageEntity.setKey(msg.getKey());
-        languageEntity.setLocale(msg.getLocale());
-        languageRepo.save(languageEntity);
+        LanguageEntity languageEntity = languageRepo.findByKeyAndLocale(msg.getKey(), msg.getLocale());
+        if(languageEntity == null) {
+             languageEntity = new LanguageEntity();
+            languageEntity.setContent(msg.getContent());
+            languageEntity.setKey(msg.getKey());
+            languageEntity.setLocale(msg.getLocale());
+            languageRepo.save(languageEntity);
+        }
+        else {
+            throw new DuplicateKeyException("Duplicate Key and Locale");
+
+        }
         return languageEntity;
 
     }

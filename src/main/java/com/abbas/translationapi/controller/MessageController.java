@@ -55,7 +55,15 @@ public class MessageController {
             responseBody = "Record Added Successfully";
             return new ResponseEntity<>(responseBody, HttpStatus.CREATED);
         } catch (Exception e) {
-            responseBody = "Error while adding please check the values.";
+
+            if(e.getMessage().contains("Duplicate Key and Locale"))
+            {
+                responseBody = "Duplicate key and locale not allowed";
+
+            }
+            else {
+                responseBody = "Error while adding please check the values.";
+            }
             return new ResponseEntity<>(responseBody, HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
