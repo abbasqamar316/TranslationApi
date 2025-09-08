@@ -64,6 +64,9 @@ VALUES (1, 'abbas', '$2a$12$B.tdihqBPoeEXtfn37f5.uYOZLwS2LVDipN9vHTiHGHdaAWKONAp
 here is the git url which is public
 https://github.com/abbasqamar316/TranslationApi.git
 
+and swagger url is
+
+http://localhost:9082/swagger-ui/index.html
 
 
 ## Authors
